@@ -1,0 +1,49 @@
+body {
+    padding: 0;
+    margin: 20px;
+    font-family: sans-serif;
+    
+    font-size: large;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color: #c46fea;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    text-align: center;
+    margin: 0;
+    border: 0;
+    padding: 8% 20% 20% 20%;
+    line-height: 1.25;
+}
+
+#title {
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.container p {
+    font-size: larger;
+}
+
+#startButton {
+    font-size: medium;
+    color: white;
+    border-radius:7px;
+    border-color: #351c75;
+    background-color: #351c75;
+    padding: 10px 20px 10px 20px;
+    margin: 20px;
+}
