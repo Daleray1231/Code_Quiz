@@ -1,87 +1,85 @@
 var timeLeft = 75;
 var elem = document.getElementById('timer');
 var timerId;
+var index = 0;
+var questionElement = document.querySelector("#questions");
+var responseElement = document.querySelector("#responses");
 
-var startButton = document.getElementById('startButton') ;
+var startButton = document.querySelector('#startButton');
+var answerList = document.querySelector('#responses ul');
 
-startButton.addEventListener('click', startCountdown);
+startButton.addEventListener('click', function () {
+    startCountdown();
+    renderQuestion();
+    renderAnswers();
+    startButton.style.display = 'none';
+});
+
+answerList.addEventListener('click', function (event) {
+    var selectedAnswer = event.target.textContent;
+    var correctAnswerIndex = questions[index].answer;
+
+    if (selectedAnswer === questions[index].responses[correctAnswerIndex]) {
+    } else {
+        timeLeft -= 10;
+    }
+
+    navigate(1); 
+    if (index < questions.length) {
+        renderQuestion();
+        renderAnswers();
+    } else {
+        endQuiz();
+    }
+});
 
 function startCountdown() {
-    clearInterval(timerId);
     elem.innerHTML = "Time: " + timeLeft;
     timerId = setInterval(countdown, 1000);
 }
 
 function countdown() {
-    if (timeLeft == 0) {
-        clearTimeout(timerId);
-        endTimer();
+    if (timeLeft <= 0) {
+        clearInterval(timerId);
+        endQuiz();
     } else {
         elem.innerHTML = "Time: " + timeLeft;
         timeLeft--;
     }
-};
+}
 
-function endTimer() {
-    // Your code to handle the end of the countdown
+var questions = [
+    { question: "What is a function", responses: [ "Reusable code", "Primitive value", "None of the above" ], answer: 0 },
+    { question: "What is an array", responses: [ "List of values", "Key value pairs", "None of the above" ], answer: 2 },
+    { question: "What is a primitive value", responses: [ "123", "1234", "None of the above" ], answer: 2 },
+    { question: "What is the abbreviation JSON", responses: [ "JASON", "Javascript notation object", "None of the above" ], answer: 1 },
+];
 
-};
+function navigate(direction) {
+    index = index + direction;
+    if (index < 0) {
+        index = questions.length - 1;
+    } else if (index >= questions.length) {
+        index = 0;
+    }
+}
 
+function renderQuestion() {
+    questionElement.textContent = questions[index].question;
+}
 
-// QUESTIONS (Shitty Youtube Example, uses window prompts)
-// var score = 0;
-// var questions = [
-    
-//     {
-//         promt:"First Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Second Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Third Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Fourth Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Fifth Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Sixth Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Seventh Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Eighth Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Ninth Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     },
-//     {
-//         promt:"Tenth Question?\n(A) answer \n(B) answer \n(C) answer \n(D) answer",
-//         answer: "A"
-//     }
-// ];
+function renderAnswers() {
+    answerList.innerHTML = ""; 
+    for (var i = 0; i < questions[index].responses.length; i++) {
+        var li = document.createElement("li");
+        li.textContent = questions[index].responses[i];
+        answerList.appendChild(li);
+    }
+}
 
-// for (var i=0; i < questions.length; i++){
-//     var response = window.prompt(questions[i].prompt);
-//     if(response == questions[i].answer){
-//         score++;
-//         alert("Correct!");
-//     } else {
-//         alert("WRONG!");
-//         // MINUS 10 SECONDS
-//     }
-//     alert("You got " + score + "/" + questions.length);
-// };
+function endQuiz() {
+    alert("Quiz ended. Your score: " + timeLeft);
+}
+
+renderQuestion();
+renderAnswers();

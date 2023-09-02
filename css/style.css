@@ -33,11 +33,11 @@ a {
     padding: 20px;
 }
 
-.container p {
+#questions {
     font-size: larger;
 }
 
-#startButton {
+#responses, #startButton {
     font-size: medium;
     color: white;
     border-radius:7px;
@@ -45,4 +45,5 @@ a {
     background-color: #351c75;
     padding: 10px 20px 10px 20px;
     margin: 20px;
+    cursor: pointer;
 }

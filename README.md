@@ -1,30 +1,18 @@
-# Code_Quiz
+# Code Quiz
+Welcome to my Code Quiz!
 
-## User Story
-### AS A coding boot camp student
+## Description
+This Code Quiz is designed to test your knowledge of coding. 
 
- I WANT to take a timed quiz on JavaScript fundamentals that stores high scores<br >
- SO THAT I can gauge my progress compared to my peers
+## Features
+Correct answers will be added up and recorded to the high scores section with your initials. Wrong answers will take 10 seconds off the timer.
 
-<br>
-<br>
+## Contributing
 
-## Acceptance Criteria
-### GIVEN I am taking a code quiz
+## Footer
 
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
+The website was made by Dale Haynie.
 
-WHEN I answer a question
-THEN I am presented with another question
+## License
 
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-
-WHEN the game is over
-THEN I can save my initials and score
-
-![Alt text](image.png)
+This project is licensed under the [MIT License](LICENSE).
