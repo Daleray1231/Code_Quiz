@@ -37,10 +37,11 @@ a {
     font-size: larger;
 }
 
-#responses, #startButton {
+#responses li,
+#startButton {
     font-size: medium;
     color: white;
-    border-radius:7px;
+    border-radius: 7px;
     border-color: #351c75;
     background-color: #351c75;
     padding: 10px 20px 10px 20px;
