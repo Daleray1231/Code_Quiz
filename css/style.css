@@ -27,7 +27,8 @@ a {
     line-height: 1.25;
 }
 
-#title {
+#title,
+#questions {
     font-size: 40px;
     font-weight: bolder;
     padding: 20px;
@@ -47,4 +48,10 @@ a {
     padding: 10px 20px 10px 20px;
     margin: 20px;
     cursor: pointer;
+}
+
+.quizEnd {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
