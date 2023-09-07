@@ -101,12 +101,4 @@ function saveScore() {
 
     localStorage.setItem("initials", initials);
     localStorage.setItem("score", yourScore);
-
-    if (!localStorage.getItem("highscores")) {
-        localStorage.setItem("highscores", JSON.stringify([{ initial: initials, score: yourScore }]));
-    } else {
-        var highscores = JSON.parse(localStorage.getItem("highscores"));
-        highscores.push([{ initial: initials, score: yourScore }]);
-        localStorage.setItem("highscores", JSON.stringify(highscores));
-    }
 }
