@@ -24,3 +24,5 @@ Github Pages: https://daleray1231.github.io/Code_Quiz
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+<img src="./image.png">

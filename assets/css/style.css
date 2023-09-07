@@ -50,8 +50,8 @@ a {
     cursor: pointer;
 }
 
-.quizEnd {
-    display: flex;
+#quizEnd {
+    display: none;
     flex-flow: column;
     align-items: center;
 }

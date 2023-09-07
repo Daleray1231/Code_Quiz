@@ -12,6 +12,8 @@ var startButton = document.querySelector('#startButton');
 var answerList = document.querySelector('#responses');
 var title = document.querySelector("#title");
 var isQuizOver = false;
+var finalScore = document.querySelector("#quizEnd");
+
 
 var submit = document.querySelector('#submit');
 
@@ -87,6 +89,7 @@ function renderAnswers() {
 }
 
 function endQuiz() {
+    finalScore.style.display = "flex";
     questionElement.style.display = 'none';
     answerList.style.display = 'none';
     isQuizOver = true;
