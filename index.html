@@ -12,29 +12,40 @@
 
 <body>
     <header>
-        <a href="">View High Scores</a>
-        <div id="timer">Time: 0 </div>
+        <!-- Header section containing the "View High Scores" link and timer -->
+        <a href="">View High Scores</a> <!-- Link to view high scores -->
+        <div id="timer">Time: 0 </div> <!-- Timer display -->
     </header>
     <div class="container">
-        <h1 id="title">Coding Quiz Challenge</h1>
-        <p id="questions">Try to answer the following code-related questions within the time limit. Keep in mind that
-            incorrect answers will penalize your score/time by ten seconds!</p>
+        <!-- Main content container -->
+        <h1 id="title">Coding Quiz Challenge</h1> <!-- Quiz title -->
+        <p id="questions">
+            <!-- Quiz instructions -->
+            Try to answer the following code-related questions within the time limit. Keep in mind that
+            incorrect answers will penalize your score/time by ten seconds!
+        </p>
         <ol id="responses">
-            <!-- Answers will be dynamically generated here -->
+            <!-- Ordered list where answer choices will be dynamically generated -->
         </ol>
-        <button id="startButton">Start Quiz</button>
+        <button id="startButton">Start Quiz</button> <!-- Button to start the quiz -->
     </div>
     <div id="quizEnd">
-        <h3>All Done!</h3>
+        <!-- Section displayed at the end of the quiz -->
+        <h3>All Done!</h3> <!-- Title for the end of quiz section -->
         <p>Your final score is: <span id="score"></span></p>
+        <!-- Paragraph displaying the user's final score -->
         <form>
+            <!-- Form for submitting initials -->
             <label>Enter Initials: </label>
+            <!-- Label for the initials input field -->
             <input id="initials" type="text" />
+            <!-- Input field for entering initials -->
             <button id="submit">Submit</button>
+            <!-- Button to submit the user's score and initials -->
         </form>
-
     </div>
     <script src="./assets/javascript/script.js"></script>
+    <!-- JavaScript file reference -->
 </body>
 
 </html>
