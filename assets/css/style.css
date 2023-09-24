@@ -1,13 +1,36 @@
 body {
     padding: 0;
-    margin: 20px;
+    margin: 0;
     font-family: sans-serif;
     font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f0f0f0; /* Add a background color for the header */
+    padding: 10px 20px; /* Add padding for spacing */
+    position: fixed; /* Fix the header position at the top of the viewport */
+    top: 0;
+}
+
+#highScoresLink {
+    color: #c46fea;
+    text-decoration: none;
+    margin-left: 20px; /* Adjust margin for spacing on the left */
+}
+
+#timer {
+    color: #000; /* Set the timer color to black */
+    font-weight: bold;
+    margin-right: 20px; /* Adjust margin for spacing on the right */
 }
 
 a {
@@ -16,10 +39,6 @@ a {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
     text-align: center;
     margin: 0;
     border: 0;

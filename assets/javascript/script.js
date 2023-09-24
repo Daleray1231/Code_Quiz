@@ -1,21 +1,19 @@
-// Initialize variables
-var timeLeft = 30; // Set the initial time left
-var elem = document.getElementById('timer'); // Get the timer element from the HTML
-var scoreElement = document.querySelector("#score"); // Get the score element from the HTML
-var yourScore = 0; // Initialize the user's score
-var timerId; // Initialize a timer ID
-var index = 0; // Initialize an index for the current question
-var containerElement = document.querySelector("#container"); // Get the container element from the HTML
-var questionElement = document.querySelector("#questions"); // Get the question element from the HTML
-var responseElement = document.querySelector("#responses"); // Get the responses element from the HTML
-var initialsEl = document.querySelector('#initials'); // Get the initials input element from the HTML
-var startButton = document.querySelector('#startButton'); // Get the start button element from the HTML
-var answerList = document.querySelector('#responses'); // Get the answer list element from the HTML
-var title = document.querySelector("#title"); // Get the title element from the HTML
-var isQuizOver = false; // Initialize a flag to track whether the quiz is over
-var finalScore = document.querySelector("#quizEnd"); // Get the final score element from the HTML
-
-var submit = document.querySelector('#submit'); // Get the submit button element from the HTML
+var timeLeft = 60; // Initial time left for the quiz
+var elem = document.getElementById('timer'); // Timer element from the HTML
+var scoreElement = document.querySelector("#score"); // Score element from the HTML
+var yourScore = 0; // User's score
+var timerId; // Timer ID for countdown
+var index = 0; // Index for the current question
+var containerElement = document.querySelector("#container"); // Container element from the HTML
+var questionElement = document.querySelector("#questions"); // Question element from the HTML
+var responseElement = document.querySelector("#responses"); // Responses element from the HTML
+var initialsEl = document.querySelector('#initials'); // Initials input element from the HTML
+var startButton = document.querySelector('#startButton'); // Start button element from the HTML
+var answerList = document.querySelector('#responses'); // Answer list element from the HTML
+var title = document.querySelector("#title"); // Title element from the HTML
+var isQuizOver = false; // Flag to track if the quiz is over
+var finalScore = document.querySelector("#quizEnd"); // Final score element from the HTML
+var submit = document.querySelector('#submit'); // Submit button element from the HTML
 
 // Event listener for the "Start" button click
 startButton.addEventListener('click', function () {
@@ -111,6 +109,19 @@ submit.addEventListener("click", saveScore);
 function saveScore() {
     var initials = initialsEl.value.trim();
 
-    localStorage.setItem("initials", initials); // Store the user's initials in local storage
-    localStorage.setItem("score", yourScore); // Store the user's score in local storage
+    // Retrieve the existing data from local storage or initialize an empty array if it doesn't exist
+    var scoresData = JSON.parse(localStorage.getItem("scoresData")) || [];
+
+    // Push the new score and initials as an object to the scoresData array
+    scoresData.push({ initials: initials, score: yourScore });
+
+    // Store the updated scoresData array in local storage
+    localStorage.setItem("scoresData", JSON.stringify(scoresData));
+
+    // Optionally, you can clear the initials input field
+    initialsEl.value = "";
+
+    // You can also update yourScore and display it if needed
+    yourScore = 0;
+    scoreElement.textContent = yourScore;
 }
