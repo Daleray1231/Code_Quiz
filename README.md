@@ -1,28 +1,41 @@
 # Code Quiz
-Welcome to my Code Quiz!
+
+Welcome to the Code Quiz!
+
+![alt text](<assets/images/Opera Snapshot_2024-02-04_140320_127.0.0.1.png>)
 
 ## Description
-This Code Quiz is designed to test your knowledge of coding. 
+
+Test your coding knowledge with this interactive Code Quiz. Answer questions to gain points, but beware – incorrect answers will deduct time from the timer.
 
 ## Features
-Correct answers will gain you points. Incorrect answers will deduct 10 seconds from the timer.
 
-When the game is complete you will store your score with your initials to the local storage.
+- Multiple-choice questions to assess your coding skills.
+- Timer to track the time taken to complete the quiz.
+- Local storage functionality to store high scores with initials.
 
-*High Scores Section still in progress (was not required for completion)*
+*Note: The High Scores Section is still in progress and not required for completion.*
 
 ## Contributing
 
-## Footer
+Feel free to contribute to the project by forking the repository, making changes, and submitting a pull request.
 
-The website was made by Dale Haynie.
+## Tech Used
 
-Gihub Repo: https://github.com/Daleray1231/Code_Quiz
+- HTML
+- CSS
+- JavaScript
 
-Github Pages: https://daleray1231.github.io/Code_Quiz 
+## Getting Started
+
+Explore the Code Quiz:
+
+[GitHub Repository](https://github.com/Daleray1231/Code_Quiz)
+
+[Deployed Website](https://daleray1231.github.io/Code_Quiz)
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-<img src="./image.png">
+
