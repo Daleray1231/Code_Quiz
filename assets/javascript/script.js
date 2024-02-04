@@ -98,6 +98,11 @@ submit.addEventListener("click", saveScore);
 function saveScore() {
     var initials = initialsEl.value.trim();
 
+    if (initials === "") {
+        alert("Please enter your initials before saving the score.");
+        return;
+    }
+
     var scoresData = JSON.parse(localStorage.getItem("scoresData")) || [];
 
     scoresData.push({ initials: initials, score: yourScore });
@@ -109,7 +114,5 @@ function saveScore() {
     yourScore = 0;
     scoreElement.textContent = yourScore;
 }
-
-
 
 
