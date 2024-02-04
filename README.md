@@ -14,8 +14,6 @@ Test your coding knowledge with this interactive Code Quiz. Answer questions to 
 - Timer to track the time taken to complete the quiz.
 - Local storage functionality to store high scores with initials.
 
-*Note: The High Scores Section is still in progress and not required for completion.*
-
 ## Contributing
 
 Feel free to contribute to the project by forking the repository, making changes, and submitting a pull request.
