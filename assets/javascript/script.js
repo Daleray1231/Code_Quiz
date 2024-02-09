@@ -60,7 +60,7 @@ function countdown() {
 
 var questions = [
     { question: "What is a function?", responses: ["Reusable code", "Primitive value", "None of the above"], answer: 0 },
-    { question: "What is an array?", responses: ["List of values", "Key value pairs", "None of the above"], answer: 2 },
+    { question: "What is an array?", responses: ["List of values", "Key value pairs", "None of the above"], answer: 0 },
     { question: "What is a primitive value?", responses: ["123", "1234", "None of the above"], answer: 2 },
     { question: "What is the abbreviation JSON?", responses: ["JASON", "Javascript notation object", "None of the above"], answer: 1 },
 ];
